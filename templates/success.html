@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta class="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Registration Portal</title>
+		<link rel='stylesheet' href='static/css/style.mini.css' />
+		<link rel="static/shortcut icon" href="static/images/favicon.ico" type="image/x-icon"/>
+	</head>
+	<body>
+	<!-- navbar -->
+	<div class="navbar">
+		<nav class="nav__mobile"></nav>
+		<div class="container">
+			<div class="navbar__inner">
+				<a href="#" class="navbar__logo"></a>
+				<nav class="navbar__menu">
+					<ul>
+						<li><a href="#">Register</a></li>
+						<li><a href="#">Github</a></li>
+					</ul>
+				</nav>
+				<div class="navbar__menu-mob"><a href="" id='toggle'><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg></a></div>
+			</div>
+		</div>
+	</div>
+	<!-- Authentication pages -->
+	<div class="auth">
+		<div class="container">
+			<div class="auth__inner">
+				<div class="auth__media">
+					<img src="static/images/undraw_happy_announcement_ac67.svg">
+				</div>
+				<div class="auth__auth">
+					<h1 class="auth__title">Success</h1>
+					<p>Your Registrationhas been successfully submitted.</p>
+					<p>Login below to see details.</p>
+					<div class="alert">Your message has been submitted.</div>
+					<form class="form" id="contactform" action = "/auth">
+						<button class="button button__primary" input style="height:40px; width:130px" value = "Login">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

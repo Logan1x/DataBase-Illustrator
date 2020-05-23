@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta class="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Registered folks!</title>
+        <link rel="static/shortcut icon" href="static/images/favicon.ico" type="image/x-icon"/>
+    </head>
+    <body style="background:white url(//www.html.am/images/backgrounds/background-image-2.gif);">
+        <marquee style="font-family:monospace; font-size: 20px;"><br>You can view the below data into a choice of your database-viewer (Libre-office, excel-sheets, Google spreadsheets etc.)</marquee>
+        <p style="font-family:'Courier New', Courier, monospace; font-size: 35px; text-align: center;">Welcome to the portal,<br> Below is the list of all your registered colleagues!</p>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+
+            </tr>
+            </thead>
+            <tbody>
+                {% for users in users %}
+                    <tr>
+                        <td>{{users['id']}}</td>
+                        <td>{{users['name']}}</td>
+                        <td>{{users['email']}}</td>
+                        <td>{{users['course']}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
