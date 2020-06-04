@@ -7,6 +7,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///courseregistration.db'
 db = SQLAlchemy(app)
 
+database={'khushal': '1234' , 'khush' :'1234' , 'Khushal' : '1234' }
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(40), nullable=False)
@@ -20,7 +22,7 @@ class User(db.Model):
 def index():
     return render_template("index.html")
 
-@app.route("/auth")
+@app.route("/auth",methods=['POST','GET'])
 def auth():
     return render_template("auth.html")
 
@@ -32,15 +34,28 @@ def success():
 def page_not_found(e):
     return render_template('404.html'), 404
 
+@app.route('/form_login',methods=['POST','GET'])
+def login():
+    name1=request.form['username']
+    pwd=request.form['password']
+    users = User.query.all()
+    if name1 not in database:
+	    return render_template('auth.html',info='Invalid Username')
+    else:
+        if database[name1]!=pwd:
+            return render_template('auth.html',info='Invalid Username or Password')
+        else:
+	        return render_template("registered.html", users=users)
+
+    
 @app.route("/registered")
 def registered():
-    users = User.query.all()
-    return render_template('registered.html', users=users)
-    # with open("registered.csv", "r") as file :
-    #     reader = csv.reader(file)
-    #     students = list(reader)
-       
-    # return render_template("registered.html", students = students)
+    if not request.form.get("username") or not request.form.get("password"):
+        return render_template("auth.html")
+    else:
+        users = User.query.all()
+        return render_template('registered.html', users=users)
+     
 @app.route("/register" , methods = ["POST"])
 def register():
     if request.method == 'POST':

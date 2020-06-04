@@ -5,30 +5,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Registered folks!</title>
         <link rel="static/shortcut icon" href="static/images/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     </head>
     <body style="background:white url(//www.html.am/images/backgrounds/background-image-2.gif);">
         <marquee style="font-family:monospace; font-size: 20px;"><br>You can view the below data into a choice of your database-viewer (Libre-office, excel-sheets, Google spreadsheets etc.)</marquee>
         <p style="font-family:'Courier New', Courier, monospace; font-size: 35px; text-align: center;">Welcome to the portal,<br> Below is the list of all your registered colleagues!</p>
-        <table border="1">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Course</th>
-
-            </tr>
-            </thead>
-            <tbody>
-                {% for users in users %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-light">
                     <tr>
-                        <td>{{users['id']}}</td>
-                        <td>{{users['name']}}</td>
-                        <td>{{users['email']}}</td>
-                        <td>{{users['course']}}</td>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Course</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for users in users %}
+                        <tr>
+                            <td>{{users['id']}}</td>
+                            <td>{{users['name']}}</td>
+                            <td>{{users['email']}}</td>
+                            <td>{{users['course']}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
