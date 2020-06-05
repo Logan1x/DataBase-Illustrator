@@ -7,9 +7,13 @@ Want to use to it for personal project, see [`LICENSE`](https://github.com/Logan
 Made some changes, want me to add?
 
 - Fork it (https://github.com/Logan1x/DataBase-Illustrator/fork)
-- Create your feature branch (git checkout -b feature/fooBar)
+- Create your feature branch (`git checkout -b feature/fooBar`)
 - Add your docs in docs/data.json file
-- Commit your changes (git commit -am 'Add some fooBar')
-- Push to the branch (git push origin feature/fooBar)
+- Commit your changes (`git commit -am 'Add some fooBar'`)
+- Push to the branch (`git push origin feature/fooBar`)
 - Create a new Pull Request
 - Add your name with a link to your profile in the contributors list
+
+### Contributors
+- Khushal Sharma([@logan1x](https://github.com/Logan1x))
+- Parth Pandya([@parthpandyappp](https://github.com/parthpandyappp))
